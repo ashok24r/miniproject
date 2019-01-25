@@ -1,0 +1,654 @@
+'''
+this script queries all the mainline open gerrits with the query
+given and displays their status in each stage.
+
+stages are dev+1, lookahead, klocwork, windevpool, CR+2, preflight.
+
+other details like gerrit id, project and subsystem are also displayed.
+
+files generated:
+  gerrit_details.json
+  gerrit_tracker.html
+
+note:
+  things that might need to updated
+  - mainline PL / SI
+  - Klocwork and Windevpool enabled projects
+  - add project to subsystem in subsystem.txt
+'''
+
+
+import json
+from subprocess import check_output
+from sys import argv
+
+import smtplib
+from email.mime.application import MIMEApplication
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.MIMEBase import MIMEBase
+from email import Encoders
+
+
+each_gerrit = []
+
+
+def get_gerrit_details(output_json_file, query):
+    print "get gerrit details\nby the gerrit query.."
+    print query
+    gerrit_details = check_output(['ssh', '-p', '29418',
+                                   'review-android.quicinc.com', 'gerrit',
+                                   'query', '--format=JSON', '--comments',
+                                   '--current-patch-set', query])
+    with open(output_json_file, "w") as fp:
+        fp.write(gerrit_details)
+    print "written gerrit details to " + output_json_file + "file"
+
+
+def UI(values, total_running, output_file):
+    '''
+    Generates output html file based on the values parsed
+    '''
+
+    total_running_stats = """
+    <div class="top_left">
+    <table style="width:50%" align="center">
+    <tr bgcolor = '#b3b3ff'><th> Stage </th>
+    <td>Lookahead </td>
+    <td> Klocwork </td>
+    <td> Windevpool </td>
+    <td> Preflight </td></tr>
+    <tr><th> Number of changes in Running state</th>
+    <td> """ + total_running[0] + """</td>
+    <td> """ + total_running[1] + """</td>
+    <td> """ + total_running[2] + """</td>
+    <td> """ + total_running[3] + """</td></tr>
+    </table><br>
+    </div>
+    <div class="top_right">
+    <form action = "/gerrit_tracker/response.php" method = "post">
+      <br/>
+      <b> </b>
+      <select name="input_category">
+        <option value="topic"> Topic </option>
+      </select>
+      <input type = "text" name = "input" required/>
+      <input type = "submit" value = "GO" class="button"/>
+      <br/><br/><br/><br/>
+    </form>
+
+    </div>
+    """
+
+    heading = """
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <style>
+    table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+
+    td, th {
+    border: 1px solid #000000;
+    text-align: left;
+    padding: 8px;
+    }
+
+    container {
+    padding:0.01em 16px;
+    }
+
+
+    div.top_left {
+    width: 80%;
+    float:left;
+    text-align:center;
+    }
+
+    div.top_right {
+    width:20%;
+    float:right;
+    text-align: right;
+    color:white;
+    }
+
+    .button {
+    background-color: #4ef442;
+    border-style: solid;
+    border-radius: 8px;
+    border-color: black;
+    color:black;
+    cursor: pointer;
+    }
+
+    </style>
+    </head>
+    <body bgcolor="#f2f2f2">
+    <div class = container>
+    <h1 style="background-color: #b3b3ff; color: #6600cc" align="center">
+    Gerrit Tracker </h1>
+    </div>
+    """ + total_running_stats + """
+
+    <table style="width:100%">
+    <tr>
+    <th bgcolor = #b3b3ff>Gerrit ID</th>
+    <th bgcolor = #b3b3ff>Project</th>
+    <th bgcolor = #b3b3ff>Subsystem</th>
+    <th bgcolor = #b3b3ff>Developer-Verified</th>
+    <th bgcolor = #b3b3ff>Lookahead</th>
+    <th bgcolor = #b3b3ff>Klocwork</th>
+    <th bgcolor = #b3b3ff>Windevpool</th>
+    <th bgcolor = #b3b3ff>Code-Review</th>
+    <th bgcolor = #b3b3ff>Preflight</th>
+    </tr>
+    """
+
+    with open(output_file, "w") as fp:
+        fp.write(heading)
+
+        def get_color(status):
+            color = "black"
+            if status == "RUNNING":
+                color = "#99ccff"
+            elif status == "PENDING":
+                color = "#ffff99"
+            elif status == "PASSED":
+                color = "#ccff99"
+            elif status == "FAILED":
+                color = "#ff4d4d"
+            elif status == "NA":
+                color = "#d9d9d9"
+
+            if status == "+1":
+                color = "#ccff99"
+            elif status == "-1":
+                color = "#ff4d4d"
+            elif status == "PENDING":
+                color = "#ffff99"
+
+            if status == "+2":
+                color = "#ccff99"
+            elif status == "-2":
+                color = "#ff4d4d"
+            elif status == "PENDING":
+                color = "#ffff99"
+
+            return color
+
+        for line in values:
+            dev_color = get_color(line["dev_1"])
+            LA_color = get_color(line["LA_status"])
+            KW_color = get_color(line["KW_status"])
+            devpool_color = get_color(line["windevpool_status"])
+            cr_color = get_color(line["cr_2"])
+            preflight_color = get_color(line["preflight_status"])
+
+            content = "<tr><td bgcolor = #ffffff>"
+            content += "<a href=https://review-android.quicinc.com/#/c/" + \
+                       line["id"] + ">" + line["id"] + "</a>"
+            content += "</td> <td>" + line["project"] + "</td><td>"
+            content += line["subsystem"] + "</td>"
+
+            content += "<td bgcolor="+dev_color+">" + line["dev_1"]
+
+            content += "</td><td bgcolor="+LA_color+">" + line["LA_status"]
+
+            content += "</td><td bgcolor="+KW_color+">" + line["KW_status"]
+
+            content += "</td><td bgcolor=" + devpool_color + ">" + \
+                       line["windevpool_status"]
+
+            content += "</td><td bgcolor="+cr_color+">" + line["cr_2"]
+
+            content += "</td><td bgcolor = " + preflight_color + ">" + \
+                       line["preflight_status"] + "</td></tr>"
+            fp.write(content)
+        print "written the output to " + output_file
+
+
+def read_json_file(output_json_file):
+    print "Reading json file from " + output_json_file
+    global each_gerrit
+    each_gerrit = []
+    print each_gerrit
+    with open(output_json_file, "r") as file_object:
+        for line in file_object:
+            each_gerrit.append(json.loads(line))
+    each_gerrit = each_gerrit[:-1]
+
+
+def get_values():
+    def get_id(line):
+        print line["number"]
+        return line["number"]
+
+    def get_project(line):
+        try:
+            project = line["project"]
+        except KeyError, e:
+            project = "Not Found"
+        return project
+
+    def get_current_patchset_comments(line):
+        current_patchset_comments = []
+        current_patchset = line["currentPatchSet"]["number"]
+        try:
+            comments = line["comments"]
+        except KeyError, e:
+            comments = "Not Found"
+            return comments
+
+        for each_comments in comments:
+            if "Patch Set "+str(current_patchset) in each_comments["message"]:
+                current_patchset_comments.append(each_comments)
+        return current_patchset_comments
+
+    def get_dev_1_status(comments):
+
+        if comments == "Not Found":
+            dev1_status = "PENDING"
+            return dev1_status
+
+        dev1_status = "PENDING"
+        for line in comments:
+            if "Developer-Verified+1" in line["message"]:
+                dev1_status = "+1"
+            elif "Developer-Verified-1" in line["message"]:
+                dev1_status = "-1"
+            elif "-Developer-Verified" in line["message"]:
+                dev1_status = "PENDING"
+        return dev1_status
+
+    def get_CR_2_status(comments):
+
+        if comments == "Not Found":
+            CR2_status = "PENDING"
+            return CR2_status
+
+        CR2_status = "PENDING"
+        for line in comments:
+            if "Code-Review+2" in line["message"]:
+                CR2_status = "+2"
+            elif "CodeReview-2" in line["message"]:
+                CR2_status = "-2"
+            elif "-CodeReview" in line["message"]:
+                CR2_status = "PENDING"
+        return CR2_status
+
+    def get_lookahead_status(comments):
+        if comments == "Not Found":
+            LA_status = "PENDING"
+            return LA_status
+
+        LA_status = "PENDING"
+        for line in comments:
+            try:
+                if line["reviewer"]["username"] == "lookahead":
+                    if "This change is being verified" in line["message"]:
+                        LA_status = "RUNNING"
+                    elif "Verified+1" in line["message"]:
+                        LA_status = "PASSED"
+                    elif "Lookahead verified bit restore by" \
+                         in line["message"]:
+                        LA_status = "PASSED"
+                    elif "Verified-1" in line["message"]:
+                        LA_status = "FAILED"
+                    else:
+                        LA_status = "PENDING"
+            except KeyError, e:
+                LA_status = "Not Found"
+                print "Reviewer Lookahead was not found"
+        return LA_status
+
+    def get_klocwork_status(comments, project):
+
+        KW_projects = [
+            'oss/system/feeds/luci',
+            'wlan/qcmbr',
+            'oss/kernel/linux-msm',
+            'oss/linux/linux-mips',
+            'oss/boot/u-boot',
+            'oss/boot/u-boot-1.1.4',
+            'oss/boot/bootdrv',
+            'oss/lklm/qca-ssdk',
+            'oss/ssdk-shell',
+            'oss/lklm/gobinet',
+            'oss/hyfi/qca-hyfi-bridge',
+            'oss/hyfi/qca-hyfi-qdisc',
+            'oss/lklm/shortcut-fe',
+            'oss/qca-ieee19051-dissector',
+            'hyfi/qca-hyd',
+            'hyfi/qca-vhyfid',
+            'hyfi/qca-hyctl',
+            'hyfi/qca-hyfi-iptv-helper',
+            'hyfi/qca-libhyfi-bridge',
+            'hyfi/libieee1905',
+            'hyfi/qca-ieee1905-gn',
+            'hyfi/libstorage',
+            'hyfi/qca-wsplcd',
+            'hyfi/libwpa2',
+            'hyfi/libhyficommon',
+            'power/qca-thermald',
+            'oss/lklm/qca-mcs',
+            'mcs/qca-mcs-apps',
+            'oss/qca/src/btconfig',
+            'oss/qca-lacpd',
+            'wifi/qca-acfg',
+            'wifi/qca-acfg-10.4',
+            'wifi/qca-hostap',
+            'wifi/qca-hostap-10.4',
+            'wifi/qca-spectral',
+            'wifi/qca-spectral-10.4',
+            'wifi/qca-wapid',
+            'wifi/qca-wifi-10.2',
+            'wifi/qca-wifi',
+            'wifi/qca-wpc',
+            'wifi/qca-wrapd',
+            'wifi/qca-wrapd-10.4',
+            'whc/qca-whc-lbd',
+            'oss/boot/lk-af',
+            'oss/boot/uboot-1.0',
+            'oss/system/feeds/ssdk',
+            'oss/lklm/qca-rfs',
+            'system/openwrt/feeds/qca',
+            'system/openwrt/feeds/wigig-fw',
+            'system/openwrt/feeds/wigig-utils',
+            'wigig/wigig-utils',
+            'wigig/wigig-utils-noship',
+            'oss/system/openwrt/feeds/qca-wifi',
+            'system/openwrt/feeds/art2',
+            'oss/system/feeds/nss-host',
+            'system/openwrt/feeds/nss',
+            'lklm/nss-userspace',
+            'oss/lklm/nss-drv',
+            'oss/lklm/nss-clients',
+            'oss/lklm/nss-gmac',
+            'oss/lklm/nss-crypto',
+            'oss/lklm/nss-cfi',
+            'oss/lklm/nss-macsec',
+            'system/openwrt/feeds/nss-cust',
+            'oss/lklm/qca-nss-ecm',
+            'oss/lklm/gobinet',
+            'system/openwrt/feeds/sigma-dut-10.4',
+            'oss/system/feeds/shortcut-fe',
+            'oss/lklm/shortcut-fe',
+            'whc/qca-whc',
+            'qsdk/qca/src/qca-whc-repacd',
+            'qsdk/qca/src/whcdiag',
+            'qsdk/qca/src/whcmvc',
+            'qsdk/qca/src/whcwx',
+            'qsdk/qca/src/whcviz',
+            'system/openwrt/feeds/athdiag-10.4',
+            'wifi/athdiag-10.4',
+            'wifi/qca-lowi',
+            'system/openwrt/feeds/hyfi',
+            'system/openwrt/feeds/ieee1905-security',
+            'system/openwrt/feeds/athtestcmd',
+            'wlan/athtestcmd',
+            'system/openwrt/feeds/plc',
+            'plc/qca-plc-serv',
+            'system/openwrt/feeds/qca-lib',
+            'system/openwrt/feeds/mcs',
+            'oss/system/feeds/networking',
+            'system/openwrt/feeds/bluetopia',
+            'system/openwrt/feeds/csrmesh',
+            'system/openwrt/feeds/zigbee',
+            'oss/wlan-host-cmn',
+            'wifi/qca-iface-mgr-10.4',
+            'oss/lklm/qca-edma',
+            'hyfi/qca-wifison-ext-lib',
+            'system/feeds/voice-control'
+        ]
+        KW_status = "NA"
+        for KW_project in KW_projects:
+            if project == KW_project:
+                KW_status = "Applicable"
+                break
+        if KW_status != "NA":
+            KW_status = "PENDING"
+            if comments == "Not Found":
+                KW_status = "PENDING"
+                return KW_status
+
+        for line in comments:
+            try:
+                if line["reviewer"]["username"] == "kwuser":
+                    if "This change is being verified in klocwork" \
+                       in line["message"]:
+                        KW_status = "RUNNING"
+                    elif "Verified+1" in line["message"]:
+                        KW_status = "PASSED"
+                    elif "Verified-1" in line["message"]:
+                        KW_status = "FAILED"
+                    elif "-Verified" in line["message"]:
+                        KW_status = "PENDING"
+            except KeyError, e:
+                KW_status = "Not Found"
+                print "Klocwork reviewer not found"
+        return KW_status
+
+    def get_windevpool_status(comments, project):
+
+        # windevpool is applicable for wifi and cmn projects alone
+        wifi_cmn_projects = [
+            'wifi/qca-wifi',
+            'wifi/qca-hostap',
+            'wifi/qca-acfg',
+            'wifi/qca-spectral',
+            'wifi/qca-wrapd',
+            'wifi/qca-wapi-supplicant',
+            'wifi/qca-wpc',
+            'wifi/qca-lowi',
+            'wifi/qca-wapid',
+            'system/openwrt/feeds/wapid',
+            'platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn',
+            'platform/vendor/qcom-proprietary/ship/ftm',
+            'platform/vendor/qcom-proprietary/ship/wlan/ath6kl-utils'
+        ]
+
+        Windevpool_status = "NA"
+        for wifi_cmn_project in wifi_cmn_projects:
+            if project == wifi_cmn_project:
+                Windevpool_status = "Applicable"
+                break
+
+        # if project is not applicable for return here else proceed
+        if Windevpool_status == "NA":
+            return Windevpool_status
+
+        if comments == "Not Found":
+            Windevpool_status = "PENDING"
+            return Windevpool_status
+
+        Windevpool_status = "PENDING"
+        for line in comments:
+            try:
+                if line["reviewer"]["username"] == "qcaswnbu":
+                    if "DevCI QSPR: Use this tag" in line["message"]:
+                        Windevpool_status = "RUNNING"
+                    elif "DevCI: Use this tag" in line["message"]:
+                        Windevpool_status = "RUNNING"
+                    else:
+                        Windevpool_status = "PENDING"
+
+                if line["reviewer"]["username"] == "windevpool":
+                    if "Verified+1" in line["message"]:
+                        Windevpool_status = "PASSED"
+                    elif "Verified-1" in line["message"]:
+                        Windevpool_status = "FAILED"
+                    elif "-Verified" in line["message"]:
+                        Windevpool_status = "PENDING"
+            except KeyError, e:
+                Windevpool_status = "Not Found"
+                print "Key error"
+
+        return Windevpool_status
+
+    def get_preflight_status(comments):
+        if comments == "Not Found":
+            preflight_status = "PENDING"
+            return preflight_status
+
+        preflight_status = "PENDING"
+        for line in comments:
+            try:
+                if line["reviewer"]["username"] == "lnxbuild":
+                    if "This change is being verified" in line["message"]:
+                        preflight_status = "RUNNING"
+                    elif "Successful verification" in line["message"]:
+                        preflight_status = "PASSED"
+                    elif "-Verified" in line["message"]:
+                        preflight_status = "FAILED"
+                    elif ("This change could not be verified due" +
+                          "to a merge conflict"
+                          in line["message"]):
+                        preflight_status = "FAILED"
+                    elif "Verified-1" in line["message"]:
+                        preflight_status = "FAILED"
+                    elif "Change has been successfully merged" \
+                         in line["message"]:
+                        preflight_status = "PASSED"
+                else:
+                    preflight_status = "PENDING"
+            except KeyError, e:
+                preflight_status = "Not Found"
+                print "Key error"
+        return preflight_status
+
+    def get_subsystem_from_project(project):
+        with open("subsystem.txt", "r") as fp:
+            subsystem_details = fp.read()
+
+        details = subsystem_details.splitlines()
+
+        subsystem_details = {}
+
+        for line in details:
+            if "    " in line:
+                prj = line.strip()
+                subsystem_details[subsystem].append(prj)
+            else:
+                subsystem = line
+                subsystem_details[subsystem] = []
+
+        for subsystem in subsystem_details:
+            for prj in subsystem_details[subsystem]:
+                if project in prj:
+                    return subsystem
+                    break
+        return "Not Found"
+
+    each_gerrit_values = []
+    for line in each_gerrit:
+        id = get_id(line)
+        project = get_project(line)
+        subsystem = get_subsystem_from_project(project)
+
+        current_patch_set_comments = get_current_patchset_comments(line)
+
+        dev_1 = get_dev_1_status(current_patch_set_comments)
+
+        LA_status = get_lookahead_status(current_patch_set_comments)
+        KW_status = get_klocwork_status(current_patch_set_comments, project)
+
+        Windevpool_status = get_windevpool_status(current_patch_set_comments,
+                                                  project)
+        cr_2 = get_CR_2_status(current_patch_set_comments)
+        preflight_status = get_preflight_status(current_patch_set_comments)
+
+        entry = {"id": id, "project": project, "subsystem": subsystem,
+                 "dev_1": dev_1, "LA_status": LA_status,
+                 "KW_status": KW_status,
+                 "windevpool_status": Windevpool_status, "cr_2": cr_2,
+                 "preflight_status": preflight_status}
+        each_gerrit_values.append(entry)
+
+    return each_gerrit_values
+
+
+def get_total_running(values):
+    LA_running = 0
+    KW_running = 0
+    windevpool_running = 0
+    preflight_running = 0
+    for line in values:
+        if line["LA_status"] == "RUNNING":
+            LA_running += 1
+        if line["KW_status"] == "RUNNING":
+            KW_running += 1
+        if line["windevpool_status"] == "RUNNING":
+            windevpool_running += 1
+        if line["preflight_status"] == "RUNNING":
+            preflight_running += 1
+    total_running = []
+    total_running.append(str(LA_running))
+    total_running.append(str(KW_running))
+    total_running.append(str(windevpool_running))
+    total_running.append(str(preflight_running))
+
+    return total_running
+
+
+def get_subsystem_not_found(values):
+
+    # returns the projects for which subsystem was not found
+
+    subsystem_not_found = []
+    for value in values:
+        if value["subsystem"] == "Not Found":
+            subsystem_not_found.append(value["project"])
+
+    subsystem_not_found = list(set(subsystem_not_found))
+    return subsystem_not_found
+
+
+def send_mail(subject, message):
+    print "sending mail..."
+    sendfrom = "c_harulp@qti.qualcomm.com"
+    sendto = ["c_harulp@qti.qualcomm.com"]
+    mail_text = message
+
+    commaspace = ", "
+    msg = MIMEMultipart()
+    msg['Subject'] = subject
+    msg['From'] = sendfrom
+    msg['To'] = commaspace.join(sendto) if type(sendto) == list else sendto
+    HTML_BODY = MIMEText(mail_text, 'html')
+    Encoders.encode_base64(HTML_BODY)
+    msg.attach(HTML_BODY)
+    s = smtplib.SMTP('smtphost.qualcomm.com')
+    s.sendmail(sendfrom, sendto, msg.as_string())
+    s.quit()
+
+
+def update_subsystem_alert(values):
+
+    subsystem_not_found = get_subsystem_not_found(values)
+    if subsystem_not_found:
+        subject = "[Tool maintenance] Gerrit Tracker: Update subsystem"
+        message = "<b>Please update subsystem for the below projects at " + \
+                  "gerrit_tracker/subsystem.txt:</b> <br><br>"
+        for proj in subsystem_not_found:
+            message += proj
+            message += "<br>"
+            with open ("subsystem.txt", "a") as fp:
+                fp.write("    " + proj +"\n")
+        message += "<br> This is an automated mail to maintain the tool " + \
+                   "<b>Gerrit Tracker</b> hosted in cdcqsdklnx31:" + \
+                   "/opt/lampp/htdocs/gerrit_tracker <br><br>" + \
+                   "code base: https://review-android.quicinc.com/#/c/2261828/"
+        send_mail(subject, message)
+
+
+def gerrit_tracker_flow(output_json_file, output_html_file, query):
+    get_gerrit_details(output_json_file, query)
+    read_json_file(output_json_file)
+    values = get_values()
+    total_running = get_total_running(values)
+    update_subsystem_alert(values)
+    UI(values, total_running, output_html_file)
