@@ -1,0 +1,126 @@
+
+<lnxbuild:/local/mnt/workspace/ashok_build/qsdk> $ for i in $(cat BuildLog.log  | grep -iE '.*/[a-z].+?warning'   | awk -F':' '$1 ~ /\..+?[a-z]$/ {print $1}' | sort -u |sed 's/.* //g'| grep -v 'local') ; do par_dir=$(basename $(dirname $i)) ;  filename=$(basename $i) ; files=($(find .  -type f -name  "$filename" 2>/dev/null | grep "$par_dir/$filename")) ; if [ ${#files[@]} -gt 1 ] ; then echo $i ;   for j in ${files[@]} ;do   echo -e "\t\t\t$j" ; done ; else echo "${files[@]} " ;fi done
+./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/opencore-amr-0.1.3/amrnb/Makefile.am - OSS
+./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/opencore-amr-0.1.3/amrwb/Makefile.am - OSS
+applets/applet_tables.c - OSS
+applets/usage.c	- OSS
+applets/usage_pod.c- OSS
+arch/arm/cpu/armv7/cache_v7.c- WIN CoreBSP
+arch/arm/cpu/armv7/qca/common/scm.c- WIN CoreBSP
+./arch/arm/include/asm/arch-qca-common/iomap.h- WIN CoreBSP
+./arch/arm/include/asm/arch-qca-common/scm.h- WIN CoreBSP
+arch/arm/lib/cache-cp15.c - WIN CoreBSP
+./armemu.c  - OSS
+board/qca/arm/common/board_init.c - WIN CoreBSP
+board/qca/arm/common/cmd_bootqca.c - WIN CoreBSP
+board/qca/arm/common/cmd_runmulticore.c - WIN CoreBSP
+board/qca/arm/common/cmd_sec_auth.c - WIN CoreBSP
+board/qca/arm/common/fdt_fixup.c - WIN CoreBSP
+board/qca/arm/ipq806x/ipq806x.c - WIN CoreBSP
+cli/qdisc/nsspfifo.c  - OSS
+cmd/Makefile.am - WIN Wifi Host
+Core/ss1btle/L2CAP.c - Thirdparty
+Core/ss1btps/L2CAP.c - Thirdparty
+Core/ss1btps/L2CAP_ERTM.c - Thirdparty
+coreutils/stat.c  - OSS
+cxx/Makefile.am - OSS
+demos/calc/Makefile.am - OSS
+demos/expr/Makefile.am - OSS
+demos/Makefile.am - OSS
+drivers/i2c/qup_i2c.c - WIN CoreBSP
+drivers/mmc/mmc.c - WIN CoreBSP
+drivers/mtd/nand/ipq_nand.c - WIN CoreBSP
+drivers/mtd/spi/spi_flash.c - WIN CoreBSP
+drivers/net/wireless/ath/wil6210/cfg80211.c - WIN Ath10K
+drivers/serial/qca_uart.c - WIN CoreBSP
+drivers/spi/ipq_spi.c - WIN CoreBSP
+examples/Makefile.am - OSS
+include/linux/stddef.h - OSS
+include/mk/env_post.mk - OSS
+include/old/test.h - OSS
+include/old/test.h - OSS
+include/old/test.h - OSS
+include/old/test.h - OSS
+include/spi_flash.h - WIN CoreBSP
+include/tst_test.h - OSS
+include/tst_test.h - OSS
+include/tst_test.h - OSS
+ipq/ipq_gmac_eth.c - OSS
+./ldlang.h - OSS
+lib/fdtdec.c - WIN CoreBSP
+lib/Makefile.am - OSS
+libmisc/Makefile.am - OSS
+libspeex/Makefile.am - OSS
+lib/string.c - WIN CoreBSP
+login-utils/last.c - OSS
+login-utils/lslogins.c - OSS
+man/da/generate_mans.mak - OSS
+man/da/generate_translations.mak - OSS
+man/de/generate_mans.mak - OSS
+man/de/generate_translations.mak - OSS
+man/fr/generate_mans.mak - OSS
+man/fr/generate_translations.mak - OSS
+man/generate_mans.mak - OSS
+man/it/generate_mans.mak - OSS
+man/it/generate_translations.mak - OSS
+man/Makefile.am - OSS
+man/pl/generate_mans.mak - OSS
+man/pl/generate_translations.mak - OSS
+man/ru/generate_mans.mak - OSS
+man/ru/generate_translations.mak - OSS
+man/sv/generate_mans.mak - OSS
+man/sv/generate_translations.mak - OSS
+man/zh_CN/generate_mans.mak - OSS
+man/zh_CN/generate_translations.mak - OSS
+m_debuginfo/debuginfo.c - OSS
+miscutils/lock.c - OSS
+mpf/Makefile.am - OSS
+mpn/Makefile.am - OSS
+mpq/Makefile.am - OSS
+mpz/Makefile.am - OSS
+net/wireless/chan.c - WIN Ath10K
+net/wireless/core.c - WIN Ath10K
+net/wireless/nl80211.c - WIN Ath10K
+net/wireless/util.c - WIN Ath10K
+networking/inetd.c - OSS
+networking/netmsg.c - OSS
+physical/PhysicalDevice.c - Third Party
+platform/base/hal/micro/unix/host/spi-protocol-linux.c - Third Party
+printf/Makefile.am - OSS
+procps/top.c - OSS
+protocol/zigbee_5.8/app/ezsp-host/spi/spi-host-ui.c - Third Party
+protocol/zigbee_5.8/app/framework/cli/network-cli.c - Third Party
+protocol/zigbee_5.8/app/framework/plugin/device-database/device-database-cli.c - Third Party
+protocol/zigbee_5.8/app/framework/plugin-host/gateway/backchannel-support.c - Third Party
+protocol/zigbee_5.8/app/framework/plugin/reporting/reporting-cli.c - Third Party
+rand/Makefile.am - OSS
+route/qdisc/nssbf.c - OSS
+route/qdisc/nsshtb.c - OSS
+scanf/Makefile.am - OSS
+scripts/basic/split-include.c - OSS
+scripts/kconfig/conf.c - WIN CoreBSP
+scripts/kconfig/mconf.c - WIN CoreBSP
+src/ds_list.c - DATA LNX
+src/ds_sl_list.c - DATA LNX
+src/ds_util.c - DATA LNX
+src/Makefile.am - WIN CoreBSP
+./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/opus-1.1/src/opus_decoder.c - OSS
+./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/opus-1.1/src/opus_multistream_encoder.c - OSS
+src/shell/shell.c - WIN SSDK
+src/stdio/fputc.c - OSS
+src/ts_linux.c - PROP
+sys-utils/hwclock.h - OSS
+test/Makefile.am - WIN CoreBSP
+tests/cxx/Makefile.am - OSS
+tests/devel/Makefile.am - OSS
+tests/Makefile.am - WIN CoreBSP
+tests/misc/Makefile.am - OSS
+tests/mpf/Makefile.am - OSS
+tests/mpn/Makefile.am - OSS
+tests/mpq/Makefile.am - OSS
+tests/mpz/Makefile.am - OSS
+tests/rand/Makefile.am - OSS
+tools/sysupgrade.c - OSS
+tune/Makefile.am - OSS
+./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libvorbis-1.3.5/vq/Makefile.am
+<lnxbuild:/local/mnt/workspace/ashok_build/qsdk> $

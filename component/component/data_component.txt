@@ -1,0 +1,918 @@
+
+<lnxbuild:/local/mnt/workspace/ashok_build/qsdk> $ for i in $(cat BuildLog.log  | grep -iE '.*/[a-z].+?warning'   | awk -F':' '$1 ~ /\..+?[a-z]$/ {print $1}' | sort -u |sed 's/.* //g'| grep -v 'local') ; do par_dir=$(basename $(dirname $i)) ;  filename=$(basename $i) ; files=($(find .  -type f -name  "$filename" 2>/dev/null | grep "$par_dir/$filename")) ; if [ ${#files[@]} -gt 1 ] ; then echo $i ;   for j in ${files[@]} ;do   echo -e "\t\t\t$j" ; done ; else echo "${files[@]} " ;fi done
+./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/opencore-amr-0.1.3/amrnb/Makefile.am - OSS
+./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/opencore-amr-0.1.3/amrwb/Makefile.am - OSS
+applets/applet_tables.c - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/busybox-1.25.1/applets/applet_tables.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/busybox-1.25.1/applets/applet_tables.c
+applets/usage.c	- OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/busybox-1.25.1/applets/usage.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/busybox-1.25.1/applets/usage.c
+applets/usage_pod.c- OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/busybox-1.25.1/applets/usage_pod.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/busybox-1.25.1/applets/usage_pod.c
+arch/arm/cpu/armv7/cache_v7.c- WIN CoreBSP
+                        ./build_dir/host/u-boot-2014.10/arch/arm/cpu/armv7/cache_v7.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/u-boot-2014.10/arch/arm/cpu/armv7/cache_v7.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/arch/arm/cpu/armv7/cache_v7.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-/u-boot-/arch/arm/cpu/armv7/cache_v7.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/arch/arm/cpu/armv7/cache_v7.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/arch/arm/cpu/armv7/cache_v7.c
+                        ./qca/src/u-boot-2016/arch/arm/cpu/armv7/cache_v7.c
+                        ./qca/src/u-boot/arch/arm/cpu/armv7/cache_v7.c
+                        ./qca/src/uboot-1.0/arch/arm/cpu/armv7/cache_v7.c
+arch/arm/cpu/armv7/qca/common/scm.c- WIN CoreBSP
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/arch/arm/cpu/armv7/qca/common/scm.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/arch/arm/cpu/armv7/qca/common/scm.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/arch/arm/cpu/armv7/qca/common/scm.c
+                        ./qca/src/u-boot-2016/arch/arm/cpu/armv7/qca/common/scm.c
+./arch/arm/include/asm/arch-qca-common/iomap.h- WIN CoreBSP
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/arch/arm/include/asm/arch-qca-common/iomap.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/arch/arm/include/asm/arch-qca-common/iomap.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/arch/arm/include/asm/arch-qca-common/iomap.h
+                        ./qca/src/u-boot-2016/arch/arm/include/asm/arch-qca-common/iomap.h
+./arch/arm/include/asm/arch-qca-common/scm.h- WIN CoreBSP
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/arch/arm/include/asm/arch-qca-common/scm.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/arch/arm/include/asm/arch-qca-common/scm.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/arch/arm/include/asm/arch-qca-common/scm.h
+                        ./qca/src/u-boot-2016/arch/arm/include/asm/arch-qca-common/scm.h
+arch/arm/lib/cache-cp15.c - WIN CoreBSP
+                        ./build_dir/host/u-boot-2014.10/arch/arm/lib/cache-cp15.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/u-boot-2014.10/arch/arm/lib/cache-cp15.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/arch/arm/lib/cache-cp15.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-/u-boot-/arch/arm/lib/cache-cp15.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/arch/arm/lib/cache-cp15.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/arch/arm/lib/cache-cp15.c
+                        ./qca/src/u-boot-2016/arch/arm/lib/cache-cp15.c
+                        ./qca/src/u-boot/arch/arm/lib/cache-cp15.c
+                        ./qca/src/uboot-1.0/arch/arm/lib/cache-cp15.c
+./armemu.c  - OSS
+                        ./build_dir/toolchain-arm_cortex-a7_gcc-5.2.0_musl-1.1.16_eabi/gdb-linaro-7.6-2013.05/sim/arm/armemu.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gdb-7.8/sim/arm/armemu.c
+                        ./build_dir/toolchain-aarch64_cortex-a53_gcc-5.2.0_musl-1.1.16/gdb-linaro-7.6-2013.05/sim/arm/armemu.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gdb-7.8/sim/arm/armemu.c
+board/qca/arm/common/board_init.c - WIN CoreBSP
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/board/qca/arm/common/board_init.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/board/qca/arm/common/board_init.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/board/qca/arm/common/board_init.c
+                        ./qca/src/u-boot-2016/board/qca/arm/common/board_init.c
+board/qca/arm/common/cmd_bootqca.c - WIN CoreBSP
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/board/qca/arm/common/cmd_bootqca.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/board/qca/arm/common/cmd_bootqca.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/board/qca/arm/common/cmd_bootqca.c
+                        ./qca/src/u-boot-2016/board/qca/arm/common/cmd_bootqca.c
+board/qca/arm/common/cmd_runmulticore.c - WIN CoreBSP
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/board/qca/arm/common/cmd_runmulticore.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/board/qca/arm/common/cmd_runmulticore.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/board/qca/arm/common/cmd_runmulticore.c
+                        ./qca/src/u-boot-2016/board/qca/arm/common/cmd_runmulticore.c
+board/qca/arm/common/cmd_sec_auth.c - WIN CoreBSP
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/board/qca/arm/common/cmd_sec_auth.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/board/qca/arm/common/cmd_sec_auth.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/board/qca/arm/common/cmd_sec_auth.c
+                        ./qca/src/u-boot-2016/board/qca/arm/common/cmd_sec_auth.c
+board/qca/arm/common/fdt_fixup.c - WIN CoreBSP
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/board/qca/arm/common/fdt_fixup.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/board/qca/arm/common/fdt_fixup.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/board/qca/arm/common/fdt_fixup.c
+                        ./qca/src/u-boot-2016/board/qca/arm/common/fdt_fixup.c
+board/qca/arm/ipq806x/ipq806x.c - WIN CoreBSP
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/board/qca/arm/ipq806x/ipq806x.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/board/qca/arm/ipq806x/ipq806x.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/board/qca/arm/ipq806x/ipq806x.c
+                        ./qca/src/u-boot-2016/board/qca/arm/ipq806x/ipq806x.c
+cli/qdisc/nsspfifo.c  - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libnl-3.2.21/lib/cli/qdisc/nsspfifo.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libnl-3.2.21/lib/cli/qdisc/nsspfifo.c
+cmd/Makefile.am - WIN Wifi Host
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qca-cfg80211-g42ded00/ath6kl-utils/libtcmd/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qca-cfg80211-g42ded00/ath6kl-utils/libathtestcmd/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysfsutils-2.1.0/cmd/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/cnssdiag/ath6kl-utils/libtcmd/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/cnssdiag/ath6kl-utils/libathtestcmd/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qca-icm-g42ded00/ath6kl-utils/libtcmd/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qca-icm-g42ded00/ath6kl-utils/libathtestcmd/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/sysfsutils-2.1.0/cmd/Makefile.am
+                        ./qca/src/common-tools/ath6kl-utils/libtcmd/Makefile.am
+                        ./qca/src/common-tools/ath6kl-utils/libathtestcmd/Makefile.am
+../../Core/ss1btle/L2CAP.c - Thirdparty
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/bluetopia-4.2.1.c1_12/bt_host/Build/Core/ss1btle/L2CAP.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/bluetopia-4.2.1.c1_12/bt_host/Build/Core/ss1btle/L2CAP.c
+../../Core/ss1btps/L2CAP.c - Thirdparty
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/bluetopia-4.2.1.c1_12/bt_host/Build/Core/ss1btps/L2CAP.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/bluetopia-4.2.1.c1_12/bt_host/Build/Core/ss1btps/L2CAP.c
+../../Core/ss1btps/L2CAP_ERTM.c - Thirdparty
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/bluetopia-4.2.1.c1_12/bt_host/Build/Core/ss1btps/L2CAP_ERTM.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/bluetopia-4.2.1.c1_12/bt_host/Build/Core/ss1btps/L2CAP_ERTM.c
+coreutils/stat.c  - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/busybox-1.25.1/coreutils/stat.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/busybox-1.25.1/coreutils/stat.c
+cxx/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/cxx/Makefile.am
+                        ./build_dir/host/gmp-5.1.3/tests/cxx/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/cxx/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tests/cxx/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/cxx/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tests/cxx/Makefile.am
+demos/calc/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/demos/calc/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/demos/calc/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/demos/calc/Makefile.am
+demos/expr/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/demos/expr/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/demos/expr/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/demos/expr/Makefile.am
+demos/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/demos/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/demos/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/demos/Makefile.am
+drivers/i2c/qup_i2c.c - WIN CoreBSP
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/drivers/i2c/qup_i2c.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/drivers/i2c/qup_i2c.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/drivers/i2c/qup_i2c.c
+                        ./qca/src/u-boot-2016/drivers/i2c/qup_i2c.c
+drivers/mmc/mmc.c - WIN CoreBSP
+                        ./build_dir/host/u-boot-2014.10/drivers/mmc/mmc.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/u-boot-2014.10/drivers/mmc/mmc.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/drivers/mmc/mmc.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-/u-boot-/drivers/mmc/mmc.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/drivers/mmc/mmc.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/drivers/mmc/mmc.c
+                        ./qca/src/u-boot-2016/drivers/mmc/mmc.c
+                        ./qca/src/u-boot/drivers/mmc/mmc.c
+                        ./qca/src/uboot-1.0/drivers/mmc/mmc.c
+drivers/mtd/nand/ipq_nand.c - WIN CoreBSP
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/drivers/mtd/nand/ipq_nand.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/drivers/mtd/nand/ipq_nand.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/drivers/mtd/nand/ipq_nand.c
+                        ./qca/src/u-boot-2016/drivers/mtd/nand/ipq_nand.c
+drivers/mtd/spi/spi_flash.c - WIN CoreBSP
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/drivers/mtd/spi/spi_flash.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-/u-boot-/drivers/mtd/spi/spi_flash.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/drivers/mtd/spi/spi_flash.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/drivers/mtd/spi/spi_flash.c
+                        ./qca/src/u-boot-2016/drivers/mtd/spi/spi_flash.c
+                        ./qca/src/u-boot/drivers/mtd/spi/spi_flash.c
+                        ./qca/src/uboot-1.0/drivers/mtd/spi/spi_flash.c
+drivers/net/wireless/ath/wil6210/cfg80211.c - WIN Ath10K
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/backports-20181206-4.4.60-ath11k/drivers/net/wireless/ath/wil6210/cfg80211.c
+                        ./qca/src/linux-4.4/drivers/net/wireless/ath/wil6210/cfg80211.c
+                        ./qca/src/wigig-utils-oss/wil6210/cfg80211.c
+drivers/serial/qca_uart.c - WIN CoreBSP
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/drivers/serial/qca_uart.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/drivers/serial/qca_uart.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/drivers/serial/qca_uart.c
+                        ./qca/src/u-boot-2016/drivers/serial/qca_uart.c
+drivers/spi/ipq_spi.c - WIN CoreBSP
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/drivers/spi/ipq_spi.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-/u-boot-/drivers/spi/ipq_spi.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/drivers/spi/ipq_spi.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/drivers/spi/ipq_spi.c
+                        ./qca/src/u-boot-2016/drivers/spi/ipq_spi.c
+                        ./qca/src/u-boot/drivers/spi/ipq_spi.c
+                        ./qca/src/uboot-1.0/drivers/spi/ipq_spi.c
+examples/Makefile.am - OSS
+                        ./build_dir/toolchain-arm_cortex-a7_gcc-5.2.0_musl-1.1.16_eabi/gcc-5.2.0/libjava/classpath/examples/Makefile.am
+                        ./build_dir/host/expat-2.2.4/examples/Makefile.am
+                        ./build_dir/host/flex-2.5.39/examples/Makefile.am
+                        ./build_dir/host/m4-1.4.17/examples/Makefile.am
+                        ./build_dir/host/mm-common-0.9.7/skeletonmm/examples/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/lxc-1.1.3/doc/examples/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/nghttp2-1.29.0/examples/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libxml2-2.9.2/doc/examples/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/iperf-3.0.11/examples/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/curl-7.57.0/docs/examples/Makefile.am
+                        ./build_dir/toolchain-aarch64_cortex-a53_gcc-5.2.0_musl-1.1.16/gcc-5.2.0/libjava/classpath/examples/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/lxc-1.1.3/doc/examples/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/nghttp2-1.29.0/examples/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/iperf-3.0.11/examples/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/curl-7.57.0/docs/examples/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libtheora-1.1.1/examples/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libvorbis-1.3.5/examples/Makefile.am
+include/linux/stddef.h - OSS
+                        ./build_dir/toolchain-arm_cortex-a7_gcc-5.2.0_musl-1.1.16_eabi/linux-dev/include/linux/stddef.h
+                        ./build_dir/toolchain-arm_cortex-a7_gcc-5.2.0_musl-1.1.16_eabi/musl-dev/linux/stddef.h
+                        ./build_dir/host/u-boot-2014.10/include/linux/stddef.h
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/backports-20181206-4.4.60-ath11k/backport-include/linux/stddef.h
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/u-boot-2014.10/include/linux/stddef.h
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/include/linux/stddef.h
+                        ./build_dir/toolchain-aarch64_cortex-a53_gcc-5.2.0_musl-1.1.16/linux-dev/include/linux/stddef.h
+                        ./build_dir/toolchain-aarch64_cortex-a53_gcc-5.2.0_musl-1.1.16/musl-dev/linux/stddef.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-/u-boot-/include/linux/stddef.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/include/linux/stddef.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/include/linux/stddef.h
+                        ./staging_dir/toolchain-arm_cortex-a7_gcc-5.2.0_musl-1.1.16_eabi/include/linux/stddef.h
+                        ./staging_dir/target-aarch64_cortex-a53_musl-1.1.16/usr/include/mac80211-backport/linux/stddef.h
+                        ./staging_dir/toolchain-aarch64_cortex-a53_gcc-5.2.0_musl-1.1.16/include/linux/stddef.h
+                        ./qca/src/u-boot-2016/include/linux/stddef.h
+                        ./qca/src/linux-4.4/include/linux/stddef.h
+                        ./qca/src/linux-4.4/include/uapi/linux/stddef.h
+                        ./qca/src/linux-4.4/user_headers/include/linux/stddef.h
+                        ./qca/src/u-boot/include/linux/stddef.h
+                        ./qca/src/qca-legacy-uboot/include/linux/stddef.h
+                        ./qca/src/uboot-1.0/include/linux/stddef.h
+../../../../include/mk/env_post.mk - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/ltp-2017-09-11/include/mk/env_post.mk
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/ltp-2017-09-11/include/mk/env_post.mk
+../../../../../include/old/test.h - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/ltp-2017-09-11/include/old/test.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/ltp-2017-09-11/include/old/test.h
+../../../../include/old/test.h - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/ltp-2017-09-11/include/old/test.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/ltp-2017-09-11/include/old/test.h
+../../../include/old/test.h - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/ltp-2017-09-11/include/old/test.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/ltp-2017-09-11/include/old/test.h
+../../include/old/test.h - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/ltp-2017-09-11/include/old/test.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/ltp-2017-09-11/include/old/test.h
+include/spi_flash.h - WIN CoreBSP
+                        ./build_dir/host/u-boot-2014.10/include/spi_flash.h
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/u-boot-2014.10/include/spi_flash.h
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/include/spi_flash.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-/u-boot-/include/spi_flash.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/include/spi_flash.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/include/spi_flash.h
+                        ./qca/src/u-boot-2016/include/spi_flash.h
+                        ./qca/src/u-boot/include/spi_flash.h
+                        ./qca/src/uboot-1.0/include/spi_flash.h
+../../../../include/tst_test.h - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/ltp-2017-09-11/include/tst_test.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/ltp-2017-09-11/include/tst_test.h
+../../include/tst_test.h - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/ltp-2017-09-11/include/tst_test.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/ltp-2017-09-11/include/tst_test.h
+../include/tst_test.h - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/ltp-2017-09-11/include/tst_test.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/ltp-2017-09-11/include/tst_test.h
+ipq/ipq_gmac_eth.c - OSS
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-/u-boot-/drivers/net/ipq/ipq_gmac_eth.c
+                        ./qca/src/u-boot/drivers/net/ipq/ipq_gmac_eth.c
+                        ./qca/src/uboot-1.0/drivers/net/ipq/ipq_gmac_eth.c
+./ldlang.h - OSS
+                        ./build_dir/toolchain-arm_cortex-a7_gcc-5.2.0_musl-1.1.16_eabi/binutils-linaro-2.24.0-2014.09/ld/ldlang.h
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/binutils-2.24/ld/ldlang.h
+                        ./build_dir/toolchain-aarch64_cortex-a53_gcc-5.2.0_musl-1.1.16/binutils-linaro-2.24.0-2014.09/ld/ldlang.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/binutils-2.24/ld/ldlang.h
+lib/fdtdec.c - WIN CoreBSP
+                        ./build_dir/host/u-boot-2014.10/tools/lib/fdtdec.c
+                        ./build_dir/host/u-boot-2014.10/lib/fdtdec.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/u-boot-2014.10/lib/fdtdec.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/tools/lib/fdtdec.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/lib/fdtdec.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-/u-boot-/lib/fdtdec.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/tools/lib/fdtdec.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/lib/fdtdec.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/tools/lib/fdtdec.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/lib/fdtdec.c
+                        ./qca/src/u-boot-2016/lib/fdtdec.c
+                        ./qca/src/u-boot/lib/fdtdec.c
+                        ./qca/src/uboot-1.0/lib/fdtdec.c
+lib/Makefile.am - OSS
+                        ./build_dir/toolchain-arm_cortex-a7_gcc-5.2.0_musl-1.1.16_eabi/gcc-5.2.0/zlib/Makefile.am
+                        ./build_dir/toolchain-arm_cortex-a7_gcc-5.2.0_musl-1.1.16_eabi/gcc-5.2.0/libjava/classpath/native/jni/native-lib/Makefile.am
+                        ./build_dir/toolchain-arm_cortex-a7_gcc-5.2.0_musl-1.1.16_eabi/gcc-5.2.0/libjava/classpath/lib/Makefile.am
+                        ./build_dir/host/expat-2.2.4/lib/Makefile.am
+                        ./build_dir/host/autoconf-2.69/lib/Makefile.am
+                        ./build_dir/host/flex-2.5.39/lib/Makefile.am
+                        ./build_dir/host/findutils-4.4.2/gnulib/Makefile.am
+                        ./build_dir/host/findutils-4.4.2/gnulib/lib/Makefile.am
+                        ./build_dir/host/findutils-4.4.2/lib/Makefile.am
+                        ./build_dir/host/m4-1.4.17/lib/Makefile.am
+                        ./build_dir/host/xz-5.2.1/lib/Makefile.am
+                        ./build_dir/host/bc-1.06.95/lib/Makefile.am
+                        ./build_dir/host/mklibs-0.1.35/lib/Makefile.am
+                        ./build_dir/host/pkg-config-0.29/glib/glib/Makefile.am
+                        ./build_dir/host/pkg-config-0.29/glib/glib/gnulib/Makefile.am
+                        ./build_dir/host/pkg-config-0.29/glib/Makefile.am
+                        ./build_dir/host/patch-2.7.5/lib/Makefile.am
+                        ./build_dir/host/sed-4.2.2/lib/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/linux-atm-2.5.2/src/lib/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/nghttp2-1.29.0/lib/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/lldpd-0.7.15/src/lib/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libnl-3.2.21/src/lib/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libnl-3.2.21/lib/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/quagga-0.99.22.4/lib/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysfsutils-2.1.0/lib/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/minicom-2.7/lib/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/xz-5.2.1/lib/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/curl-7.57.0/lib/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/lib/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/lrzsz-0.12.20/lib/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/elfutils-0.161/lib/Makefile.am
+                        ./build_dir/toolchain-aarch64_cortex-a53_gcc-5.2.0_musl-1.1.16/gcc-5.2.0/zlib/Makefile.am
+                        ./build_dir/toolchain-aarch64_cortex-a53_gcc-5.2.0_musl-1.1.16/gcc-5.2.0/libjava/classpath/native/jni/native-lib/Makefile.am
+                        ./build_dir/toolchain-aarch64_cortex-a53_gcc-5.2.0_musl-1.1.16/gcc-5.2.0/libjava/classpath/lib/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/nghttp2-1.29.0/lib/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libnl-3.2.21/src/lib/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libnl-3.2.21/lib/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/sysfsutils-2.1.0/lib/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/minicom-2.7/lib/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/curl-7.57.0/lib/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/lib/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libtheora-1.1.1/lib/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/linux-atm-2.5.2/src/lib/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libvorbis-1.3.5/lib/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/lrzsz-0.12.20/lib/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/elfutils-0.161/lib/Makefile.am
+libmisc/Makefile.am - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/libmisc/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/libmisc/Makefile.am
+libspeex/Makefile.am - OSS
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/speex-1.2rc1/libspeex/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/speex-1.2rc1/win32/libspeex/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/speex-1.2rc1/win32/VS2005/libspeex/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/speex-1.2rc1/win32/VS2003/libspeex/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/speex-1.2rc1/win32/VS2008/libspeex/Makefile.am
+lib/string.c - WIN CoreBSP
+                        ./build_dir/host/u-boot-2014.10/arch/blackfin/lib/string.c
+                        ./build_dir/host/u-boot-2014.10/arch/x86/lib/string.c
+                        ./build_dir/host/u-boot-2014.10/lib/string.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/u-boot-2014.10/arch/blackfin/lib/string.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/u-boot-2014.10/arch/x86/lib/string.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/u-boot-2014.10/lib/string.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/arch/blackfin/lib/string.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/arch/x86/lib/string.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/lib/string.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-/u-boot-/arch/blackfin/lib/string.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-/u-boot-/arch/x86/lib/string.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-/u-boot-/lib/string.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/arch/blackfin/lib/string.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/arch/x86/lib/string.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/lib/string.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/arch/blackfin/lib/string.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/arch/x86/lib/string.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/lib/string.c
+                        ./qca/src/u-boot-2016/arch/blackfin/lib/string.c
+                        ./qca/src/u-boot-2016/arch/x86/lib/string.c
+                        ./qca/src/u-boot-2016/lib/string.c
+                        ./qca/src/linux-4.4/arch/cris/arch-v32/lib/string.c
+                        ./qca/src/linux-4.4/arch/cris/arch-v10/lib/string.c
+                        ./qca/src/linux-4.4/arch/s390/lib/string.c
+                        ./qca/src/linux-4.4/lib/string.c
+                        ./qca/src/u-boot/arch/blackfin/lib/string.c
+                        ./qca/src/u-boot/arch/x86/lib/string.c
+                        ./qca/src/u-boot/lib/string.c
+                        ./qca/src/uboot-1.0/arch/blackfin/lib/string.c
+                        ./qca/src/uboot-1.0/arch/x86/lib/string.c
+                        ./qca/src/uboot-1.0/lib/string.c
+login-utils/last.c - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/util-linux-2.25.2/login-utils/last.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/util-linux-2.25.2/login-utils/last.c
+login-utils/lslogins.c - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/util-linux-2.25.2/login-utils/lslogins.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/util-linux-2.25.2/login-utils/lslogins.c
+man/da/../generate_mans.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_mans.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_mans.mak
+man/da/../generate_translations.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_translations.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_translations.mak
+man/de/../generate_mans.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_mans.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_mans.mak
+man/de/../generate_translations.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_translations.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_translations.mak
+man/fr/../generate_mans.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_mans.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_mans.mak
+man/fr/../generate_translations.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_translations.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_translations.mak
+man/generate_mans.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_mans.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_mans.mak
+man/it/../generate_mans.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_mans.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_mans.mak
+man/it/../generate_translations.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_translations.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_translations.mak
+man/Makefile.am - OSS
+                        ./build_dir/toolchain-arm_cortex-a7_gcc-5.2.0_musl-1.1.16_eabi/gcc-5.2.0/libffi/man/Makefile.am
+                        ./build_dir/host/autoconf-2.69/man/Makefile.am
+                        ./build_dir/host/opkg-9c97d5ecd795709c8584e972bfdf3aee3a5b846d/man/Makefile.am
+                        ./build_dir/host/Python-2.7.13/Modules/_ctypes/libffi/man/Makefile.am
+                        ./build_dir/host/libffi-3.0.13/man/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/linux-atm-2.5.2/src/man/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/opkg-unsigned/opkg-9c97d5ecd795709c8584e972bfdf3aee3a5b846d/man/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libnl-3.2.21/man/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/minicom-2.7/man/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/iperf-mt/iperf-2.0.5/man/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/Python-2.7.13/Modules/_ctypes/libffi/man/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/pm-utils-1.4.1/man/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libffi-3.0.13/man/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/lrzsz-0.12.20/man/Makefile.am
+                        ./build_dir/toolchain-aarch64_cortex-a53_gcc-5.2.0_musl-1.1.16/gcc-5.2.0/libffi/man/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/opkg-unsigned/opkg-9c97d5ecd795709c8584e972bfdf3aee3a5b846d/man/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libnl-3.2.21/man/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/minicom-2.7/man/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/linux-atm-2.5.2/src/man/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/lrzsz-0.12.20/man/Makefile.am
+man/pl/../generate_mans.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_mans.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_mans.mak
+man/pl/../generate_translations.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_translations.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_translations.mak
+man/ru/../generate_mans.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_mans.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_mans.mak
+man/ru/../generate_translations.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_translations.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_translations.mak
+man/sv/../generate_mans.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_mans.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_mans.mak
+man/sv/../generate_translations.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_translations.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_translations.mak
+man/zh_CN/../generate_mans.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_mans.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_mans.mak
+man/zh_CN/../generate_translations.mak - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/man/generate_translations.mak
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/man/generate_translations.mak
+m_debuginfo/debuginfo.c - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/valgrind-3.13.0/coregrind/m_debuginfo/debuginfo.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/valgrind-3.13.0/coregrind/m_debuginfo/debuginfo.c
+miscutils/lock.c - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/busybox-1.25.1/miscutils/lock.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/busybox-1.25.1/miscutils/lock.c
+mpf/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/tests/mpf/Makefile.am
+                        ./build_dir/host/gmp-5.1.3/mpf/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tests/mpf/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/mpf/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tests/mpf/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/mpf/Makefile.am
+mpn/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/mpn/Makefile.am
+                        ./build_dir/host/gmp-5.1.3/tests/mpn/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/mpn/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tests/mpn/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/mpn/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tests/mpn/Makefile.am
+mpq/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/mpq/Makefile.am
+                        ./build_dir/host/gmp-5.1.3/tests/mpq/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/mpq/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tests/mpq/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/mpq/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tests/mpq/Makefile.am
+mpz/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/mpz/Makefile.am
+                        ./build_dir/host/gmp-5.1.3/tests/mpz/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/mpz/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tests/mpz/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/mpz/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tests/mpz/Makefile.am
+net/wireless/chan.c - WIN Ath10K
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/backports-20181206-4.4.60-ath11k/net/wireless/chan.c
+                        ./qca/src/linux-4.4/net/wireless/chan.c
+net/wireless/core.c - WIN Ath10K
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/backports-20181206-4.4.60-ath11k/net/wireless/core.c
+                        ./qca/src/linux-4.4/net/wireless/core.c
+net/wireless/nl80211.c - WIN Ath10K
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/backports-20181206-4.4.60-ath11k/net/wireless/nl80211.c
+                        ./qca/src/linux-4.4/net/wireless/nl80211.c
+net/wireless/util.c - WIN Ath10K
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/backports-20181206-4.4.60-ath11k/net/wireless/util.c
+                        ./qca/src/linux-4.4/net/wireless/util.c
+networking/inetd.c - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/busybox-1.25.1/networking/inetd.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/busybox-1.25.1/networking/inetd.c
+networking/netmsg.c - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/busybox-1.25.1/networking/netmsg.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/busybox-1.25.1/networking/netmsg.c
+physical/PhysicalDevice.c - Third Party
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/NXP_SDK_1.4.6.2/hsdk/physical/PhysicalDevice.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/NXP_SDK_1.4.6.2/hsdk/physical/PhysicalDevice.c
+../../../platform/base/hal/micro/unix/host/spi-protocol-linux.c - Third Party
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/v5.8.0.0/platform/base/hal/micro/unix/host/spi-protocol-linux.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/v5.8.0.0/platform/base/hal/micro/unix/host/spi-protocol-linux.c
+printf/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/printf/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/printf/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/printf/Makefile.am
+procps/top.c - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/busybox-1.25.1/procps/top.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/busybox-1.25.1/procps/top.c
+../../../protocol/zigbee_5.8/app/ezsp-host/spi/spi-host-ui.c - Third Party
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/v5.8.0.0/protocol/zigbee_5.8/app/ezsp-host/spi/spi-host-ui.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/v5.8.0.0/protocol/zigbee_5.8/app/ezsp-host/spi/spi-host-ui.c
+../../../protocol/zigbee_5.8/app/framework/cli/network-cli.c - Third Party
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/v5.8.0.0/protocol/zigbee_5.8/app/framework/cli/network-cli.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/v5.8.0.0/protocol/zigbee_5.8/app/framework/cli/network-cli.c
+../../../protocol/zigbee_5.8/app/framework/plugin/device-database/device-database-cli.c - Third Party
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/v5.8.0.0/protocol/zigbee_5.8/app/framework/plugin/device-database/device-database-cli.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/v5.8.0.0/protocol/zigbee_5.8/app/framework/plugin/device-database/device-database-cli.c
+../../../protocol/zigbee_5.8/app/framework/plugin-host/gateway/backchannel-support.c - Third Party
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/v5.8.0.0/protocol/zigbee_5.8/app/framework/plugin-host/gateway/backchannel-support.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/v5.8.0.0/protocol/zigbee_5.8/app/framework/plugin-host/gateway/backchannel-support.c
+../../../protocol/zigbee_5.8/app/framework/plugin/reporting/reporting-cli.c - Third Party
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/v5.8.0.0/protocol/zigbee_5.8/app/framework/plugin/reporting/reporting-cli.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/v5.8.0.0/protocol/zigbee_5.8/app/framework/plugin/reporting/reporting-cli.c
+rand/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/rand/Makefile.am
+                        ./build_dir/host/gmp-5.1.3/tests/rand/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/rand/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tests/rand/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/rand/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tests/rand/Makefile.am
+route/qdisc/nssbf.c - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libnl-3.2.21/lib/route/qdisc/nssbf.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libnl-3.2.21/lib/route/qdisc/nssbf.c
+route/qdisc/nsshtb.c - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libnl-3.2.21/lib/route/qdisc/nsshtb.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libnl-3.2.21/lib/route/qdisc/nsshtb.c
+scanf/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/scanf/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/scanf/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/scanf/Makefile.am
+scripts/basic/split-include.c - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/busybox-1.25.1/scripts/basic/split-include.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/busybox-1.25.1/scripts/basic/split-include.c
+scripts/kconfig/conf.c - WIN CoreBSP
+                        ./build_dir/host/u-boot-2014.10/scripts/kconfig/conf.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/u-boot-2014.10/scripts/kconfig/conf.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/scripts/kconfig/conf.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/busybox-1.25.1/scripts/kconfig/conf.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/busybox-1.25.1/scripts/kconfig/conf.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/scripts/kconfig/conf.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/scripts/kconfig/conf.c
+                        ./qca/src/u-boot-2016/scripts/kconfig/conf.c
+                        ./qca/src/linux-4.4/scripts/kconfig/conf.c
+scripts/kconfig/mconf.c - WIN CoreBSP
+                        ./build_dir/host/u-boot-2014.10/scripts/kconfig/mconf.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/u-boot-2014.10/scripts/kconfig/mconf.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/scripts/kconfig/mconf.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/busybox-1.25.1/scripts/kconfig/mconf.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/busybox-1.25.1/scripts/kconfig/mconf.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/scripts/kconfig/mconf.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/scripts/kconfig/mconf.c
+                        ./qca/src/u-boot-2016/scripts/kconfig/mconf.c
+                        ./qca/src/linux-4.4/scripts/kconfig/mconf.c
+src/ds_list.c - DATA LNX
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsutils-gb5b369c/src/ds_list.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/dsutils/src/ds_list.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/dsutils-gb5b369c/src/ds_list.c
+                        ./qca/src/data/dsutils/src/ds_list.c
+src/ds_sl_list.c - DATA LNX
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsutils-gb5b369c/src/ds_sl_list.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/dsutils/src/ds_sl_list.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/dsutils-gb5b369c/src/ds_sl_list.c
+                        ./qca/src/data/dsutils/src/ds_sl_list.c
+src/ds_util.c - DATA LNX
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsutils-gb5b369c/src/ds_util.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/dsutils/src/ds_util.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/ds_profile/src/ds_util.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/dsutils-gb5b369c/src/ds_util.c
+                        ./qca/src/data/dsutils/src/ds_util.c
+                        ./qca/src/data/ds_profile/src/ds_util.c
+src/Makefile.am - WIN CoreBSP
+                        ./build_dir/toolchain-arm_cortex-a7_gcc-5.2.0_musl-1.1.16_eabi/gcc-5.2.0/libstdc++-v3/src/Makefile.am
+                        ./build_dir/host/gengetopt-2.22.6/src/Makefile.am
+                        ./build_dir/host/patchelf-0.8/src/Makefile.am
+                        ./build_dir/host/m4-1.4.17/src/Makefile.am
+                        ./build_dir/host/opkg-9c97d5ecd795709c8584e972bfdf3aee3a5b846d/src/Makefile.am
+                        ./build_dir/host/xz-5.2.1/src/Makefile.am
+                        ./build_dir/host/mm-common-0.9.7/skeletonmm/skeleton/src/Makefile.am
+                        ./build_dir/host/mklibs-0.1.35/src/Makefile.am
+                        ./build_dir/host/mpfr-3.1.2/src/Makefile.am
+                        ./build_dir/host/mpc-1.0.2/src/Makefile.am
+                        ./build_dir/host/patch-2.7.5/src/Makefile.am
+                        ./build_dir/host/automake-1.15/doc/amhello/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/linux-atm-2.5.2/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/qca-diag-g14a7bca/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/qca-qmi-framework-g3fd1530/common/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/qca-qmi-framework-g3fd1530/qsap/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/qca-qmi-framework-g3fd1530/qcsi/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/qca-qmi-framework-g3fd1530/qcci/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/netmgr-gb5b369c/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/lxc-1.1.3/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/stress-1.0.4/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libgpg-error-1.12/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/nghttp2-1.29.0/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/opkg-unsigned/opkg-9c97d5ecd795709c8584e972bfdf3aee3a5b846d/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsutils-gb5b369c/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/rmnetctl-g52c37a1/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/alsa-lib-1.0.28/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/file-5.25/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libqmi_client_qmux-g06d71bd/core/lib/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libqmi_client_qmux-g06d71bd/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/lldpd-0.7.15/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libnl-3.2.21/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/quagga-0.99.22.4/pkgsrc/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qmiidl-g06d71bd/core/lib/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qmiidl-g06d71bd/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gdbm-1.11/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/minicom-2.7/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/xz-5.2.1/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/iperf-3.0.11/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/curl-7.57.0/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qmi-g06d71bd/core/lib/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qmi-g06d71bd/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/iperf-mt/iperf-2.0.5/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qmiservices-g06d71bd/core/lib/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qmiservices-g06d71bd/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/pm-utils-1.4.1/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/ntfs-3g-2014.2.15-1-fuseint/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qdi-gb5b369c/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libgcrypt-1.6.6/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/lrzsz-0.12.20/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/jansson-2.7/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qmi_client_helper-g06d71bd/core/lib/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qmi_client_helper-g06d71bd/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/mobileap/client/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/mobileap/webserver/qcmap_web_client/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/mobileap/server/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/mobileap/eMBMS_multiclient/qmi_ip_multiclient/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/mobileap/eMBMS_multiclient/tunneling/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/netmgr/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/dsutils/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/ipacm-diag/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/qdi/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/ipacm-perf/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/adpl/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/configdb/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/tests/dsi_netctrl/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/qti/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/qdp/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/qti_socksv5/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/qmi_ip/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/dsi_netctrl/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/dsi_netctrl-gb5b369c/at-cmux/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/accel-pptp-0.8.5/pppd_plugin/src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/isc-dhcp-ipv6/dhcp-4.3.6/bind/bind-9.9.11/unit/atf-src/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/elfutils-0.161/src/Makefile.am
+                        ./build_dir/toolchain-aarch64_cortex-a53_gcc-5.2.0_musl-1.1.16/gcc-5.2.0/libstdc++-v3/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/lxc-1.1.3/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/stress-1.0.4/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libgpg-error-1.12/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/nghttp2-1.29.0/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/opkg-unsigned/opkg-9c97d5ecd795709c8584e972bfdf3aee3a5b846d/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/dsutils-gb5b369c/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/alsa-lib-1.0.28/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libqmi_client_qmux-g06d71bd/core/lib/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libqmi_client_qmux-g06d71bd/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libnl-3.2.21/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/qmiidl-g06d71bd/core/lib/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/qmiidl-g06d71bd/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/minicom-2.7/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libogg-1.3.2/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/iperf-3.0.11/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/curl-7.57.0/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/speex-1.2rc1/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/qmiservices-g06d71bd/core/lib/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/qmiservices-g06d71bd/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/linux-atm-2.5.2/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/qca-diag-g14a7bca/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libgcrypt-1.6.6/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/lrzsz-0.12.20/src/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/elfutils-0.161/src/Makefile.am
+                        ./qca/feeds/apple-homekit/src/hapd-1.0/src/Makefile.am
+                        ./qca/feeds/apple-homekit/src/hald-1.0/src/Makefile.am
+                        ./qca/feeds/apple-homekit/src/mdnsrd-1.0/src/Makefile.am
+                        ./qca/src/qca-diag/src/Makefile.am
+                        ./qca/src/data-oss/rmnetctl/src/Makefile.am
+                        ./qca/src/data-oss/datatop/src/Makefile.am
+                        ./qca/src/data/mobileap/client/src/Makefile.am
+                        ./qca/src/data/mobileap/webserver/qcmap_web_client/src/Makefile.am
+                        ./qca/src/data/mobileap/server/src/Makefile.am
+                        ./qca/src/data/mobileap/eMBMS_multiclient/qmi_ip_multiclient/src/Makefile.am
+                        ./qca/src/data/mobileap/eMBMS_multiclient/tunneling/src/Makefile.am
+                        ./qca/src/data/netmgr/src/Makefile.am
+                        ./qca/src/data/dsutils/src/Makefile.am
+                        ./qca/src/data/ipacm-diag/src/Makefile.am
+                        ./qca/src/data/qdi/src/Makefile.am
+                        ./qca/src/data/ipacm-perf/src/Makefile.am
+                        ./qca/src/data/adpl/src/Makefile.am
+                        ./qca/src/data/configdb/src/Makefile.am
+                        ./qca/src/data/tests/dsi_netctrl/src/Makefile.am
+                        ./qca/src/data/qti/src/Makefile.am
+                        ./qca/src/data/qdp/src/Makefile.am
+                        ./qca/src/data/qti_socksv5/src/Makefile.am
+                        ./qca/src/data/qmi_ip/src/Makefile.am
+                        ./qca/src/data/dsi_netctrl/src/Makefile.am
+                        ./qca/src/data/at-cmux/src/Makefile.am
+                        ./qca/src/linux-4.4/tools/usb/usbip/libsrc/Makefile.am
+                        ./qca/src/linux-4.4/tools/usb/usbip/src/Makefile.am
+                        ./qca/src/qmi/core/lib/src/Makefile.am
+                        ./qca/src/qmi/src/Makefile.am
+                        ./qca/src/qca-qmi-framework/common/src/Makefile.am
+                        ./qca/src/qca-qmi-framework/qsap/src/Makefile.am
+                        ./qca/src/qca-qmi-framework/qcsi/src/Makefile.am
+                        ./qca/src/qca-qmi-framework/qcci/src/Makefile.am
+./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/opus-1.1/src/opus_decoder.c - OSS
+./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/opus-1.1/src/opus_multistream_encoder.c - OSS
+src/shell/shell.c - WIN SSDK
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/qca-ssdk-shell-g0920d57/src/shell/shell.c
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/qca-psdk-g8b98b81/cli/src/shell/shell.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/lk-af-ipq806x/lk-af-/app/shell/shell.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/qca-psdk-g8b98b81/cli/src/shell/shell.c
+                        ./qca/src/lk-af/app/shell/shell.c
+                        ./qca/src/qca-ssdk-shell/src/shell/shell.c
+                        ./qca/src/qca-psdk/cli/src/shell/shell.c
+src/stdio/fputc.c - OSS
+                        ./build_dir/toolchain-arm_cortex-a7_gcc-5.2.0_musl-1.1.16_eabi/musl-1.1.16/src/stdio/fputc.c
+                        ./build_dir/toolchain-aarch64_cortex-a53_gcc-5.2.0_musl-1.1.16/musl-1.1.16/src/stdio/fputc.c
+src/ts_linux.c - PROP
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/qca-diag-g14a7bca/src/ts_linux.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/qca-diag-g14a7bca/src/ts_linux.c
+                        ./qca/src/qca-diag/src/ts_linux.c
+sys-utils/hwclock.h - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/util-linux-2.25.2/sys-utils/hwclock.h
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/util-linux-2.25.2/sys-utils/hwclock.h
+test/Makefile.am - WIN CoreBSP
+                        ./build_dir/toolchain-arm_cortex-a7_gcc-5.2.0_musl-1.1.16_eabi/gcc-5.2.0/libjava/classpath/gnu/test/Makefile.am
+                        ./build_dir/host/autoconf-2.69/lib/autotest/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/linux-atm-2.5.2/src/test/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/qca-diag-g14a7bca/test/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/stress-1.0.4/test/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/valgrind-3.13.0/memcheck/tests/vbit-test/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/alsa-lib-1.0.28/test/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/lldpd-0.7.15/libevent/test/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysfsutils-2.1.0/test/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/alsa-utils-1.0.28/speaker-test/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/curl-7.57.0/tests/libtest/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libevent-2.0.22-stable/test/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/jansson-2.7/test/Makefile.am
+                        ./build_dir/toolchain-aarch64_cortex-a53_gcc-5.2.0_musl-1.1.16/gcc-5.2.0/libjava/classpath/gnu/test/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/stress-1.0.4/test/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/valgrind-3.13.0/memcheck/tests/vbit-test/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/alsa-lib-1.0.28/test/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/sysfsutils-2.1.0/test/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/curl-7.57.0/tests/libtest/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/speex-1.2rc1/ti/speex_C55_test/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/speex-1.2rc1/ti/speex_C54_test/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/speex-1.2rc1/ti/speex_C64_test/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libevent-2.0.22-stable/test/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/linux-atm-2.5.2/src/test/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/qca-diag-g14a7bca/test/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libvorbis-1.3.5/test/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/opencore-amr-0.1.3/test/Makefile.am
+                        ./qca/src/qca-diag/test/Makefile.am
+tests/cxx/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/cxx/Makefile.am
+                        ./build_dir/host/gmp-5.1.3/tests/cxx/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/cxx/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tests/cxx/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/cxx/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tests/cxx/Makefile.am
+tests/devel/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/tests/devel/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tests/devel/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tests/devel/Makefile.am
+tests/Makefile.am - WIN CoreBSP
+                        ./build_dir/toolchain-arm_cortex-a7_gcc-5.2.0_musl-1.1.16_eabi/gcc-5.2.0/libvtv/testsuite/other-tests/Makefile.am
+                        ./build_dir/host/gengetopt-2.22.6/src/tests/Makefile.am
+                        ./build_dir/host/gengetopt-2.22.6/tests/Makefile.am
+                        ./build_dir/host/patchelf-0.8/tests/Makefile.am
+                        ./build_dir/host/expat-2.2.4/tests/Makefile.am
+                        ./build_dir/host/autoconf-2.69/tests/Makefile.am
+                        ./build_dir/host/flex-2.5.39/tests/Makefile.am
+                        ./build_dir/host/findutils-4.4.2/tests/Makefile.am
+                        ./build_dir/host/m4-1.4.17/tests/Makefile.am
+                        ./build_dir/host/opkg-9c97d5ecd795709c8584e972bfdf3aee3a5b846d/tests/Makefile.am
+                        ./build_dir/host/xz-5.2.1/tests/Makefile.am
+                        ./build_dir/host/mpfr-3.1.2/tests/Makefile.am
+                        ./build_dir/host/gmp-5.1.3/tests/Makefile.am
+                        ./build_dir/host/mpc-1.0.2/tests/Makefile.am
+                        ./build_dir/host/patch-2.7.5/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/linux-ipq_ipq807x_64/strace-4.8/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/lxc-1.1.3/src/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libgpg-error-1.12/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/nghttp2-1.29.0/integration-tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/nghttp2-1.29.0/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/opkg-unsigned/opkg-9c97d5ecd795709c8584e972bfdf3aee3a5b846d/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/valgrind-3.13.0/cachegrind/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/valgrind-3.13.0/helgrind/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/valgrind-3.13.0/lackey/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/valgrind-3.13.0/gdbserver_tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/valgrind-3.13.0/memcheck/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/valgrind-3.13.0/massif/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/valgrind-3.13.0/exp-bbv/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/valgrind-3.13.0/exp-dhat/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/valgrind-3.13.0/exp-sgcheck/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/valgrind-3.13.0/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/valgrind-3.13.0/callgrind/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/valgrind-3.13.0/none/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/valgrind-3.13.0/drd/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libxml2-2.9.2/python/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/file-5.25/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libqmi_client_qmux-g06d71bd/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/lldpd-0.7.15/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libnl-3.2.21/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/quagga-0.99.22.4/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qmiidl-g06d71bd/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gdbm-1.11/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/json-c-0.12/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/xz-5.2.1/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/coreutils-8.23/gnulib-tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/curl-7.57.0/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qmi-g06d71bd/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qmiservices-g06d71bd/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/libgcrypt-1.6.6/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/qmi_client_helper-g06d71bd/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/isc-dhcp-ipv6/dhcp-4.3.6/common/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/isc-dhcp-ipv6/dhcp-4.3.6/client/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/isc-dhcp-ipv6/dhcp-4.3.6/server/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/isc-dhcp-ipv6/dhcp-4.3.6/tests/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/elfutils-0.161/tests/Makefile.am
+                        ./build_dir/toolchain-aarch64_cortex-a53_gcc-5.2.0_musl-1.1.16/gcc-5.2.0/libvtv/testsuite/other-tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/lxc-1.1.3/src/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libgpg-error-1.12/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/nghttp2-1.29.0/integration-tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/nghttp2-1.29.0/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/opkg-unsigned/opkg-9c97d5ecd795709c8584e972bfdf3aee3a5b846d/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/valgrind-3.13.0/cachegrind/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/valgrind-3.13.0/helgrind/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/valgrind-3.13.0/lackey/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/valgrind-3.13.0/gdbserver_tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/valgrind-3.13.0/memcheck/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/valgrind-3.13.0/massif/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/valgrind-3.13.0/exp-bbv/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/valgrind-3.13.0/exp-dhat/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/valgrind-3.13.0/exp-sgcheck/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/valgrind-3.13.0/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/valgrind-3.13.0/callgrind/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/valgrind-3.13.0/none/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/valgrind-3.13.0/drd/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libqmi_client_qmux-g06d71bd/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libnl-3.2.21/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/qmiidl-g06d71bd/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/json-c-0.12/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/coreutils-8.23/gnulib-tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/curl-7.57.0/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/speex-1.2rc1/win32/VS2005/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/speex-1.2rc1/win32/VS2003/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/speex-1.2rc1/win32/VS2008/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/qmiservices-g06d71bd/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libtheora-1.1.1/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/strace-4.8/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libgcrypt-1.6.6/tests/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/elfutils-0.161/tests/Makefile.am
+                        ./qca/src/qmi/tests/Makefile.am
+tests/misc/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/tests/misc/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/shadow-4.2.1/libmisc/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tests/misc/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/shadow-4.2.1/libmisc/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tests/misc/Makefile.am
+tests/mpf/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/tests/mpf/Makefile.am
+                        ./build_dir/host/gmp-5.1.3/mpf/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tests/mpf/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/mpf/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tests/mpf/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/mpf/Makefile.am
+tests/mpn/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/mpn/Makefile.am
+                        ./build_dir/host/gmp-5.1.3/tests/mpn/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/mpn/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tests/mpn/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/mpn/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tests/mpn/Makefile.am
+tests/mpq/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/mpq/Makefile.am
+                        ./build_dir/host/gmp-5.1.3/tests/mpq/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/mpq/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tests/mpq/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/mpq/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tests/mpq/Makefile.am
+tests/mpz/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/mpz/Makefile.am
+                        ./build_dir/host/gmp-5.1.3/tests/mpz/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/mpz/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tests/mpz/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/mpz/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tests/mpz/Makefile.am
+tests/rand/Makefile.am - OSS
+                        ./build_dir/host/gmp-5.1.3/rand/Makefile.am
+                        ./build_dir/host/gmp-5.1.3/tests/rand/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/rand/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tests/rand/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/rand/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tests/rand/Makefile.am
+tools/sysupgrade.c - OSS
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/sysupgrade-helper/u-boot-2016-/u-boot-2016-g8d00a32/tools/sysupgrade.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-/u-boot-/tools/sysupgrade.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x/u-boot-2016-g8d00a32/tools/sysupgrade.c
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/linux-ipq_ipq806x/u-boot-2016-ipq806x_standard/u-boot-2016-g8d00a32/tools/sysupgrade.c
+                        ./qca/src/u-boot-2016/tools/sysupgrade.c
+                        ./qca/src/u-boot/tools/sysupgrade.c
+tune/Makefile.am - OSS
+                        ./build_dir/host/mpfr-3.1.2/tune/Makefile.am
+                        ./build_dir/host/gmp-5.1.3/tune/Makefile.am
+                        ./build_dir/target-aarch64_cortex-a53_musl-1.1.16/gmp-6.0.0/tune/Makefile.am
+                        ./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/gmp-6.0.0/tune/Makefile.am
+./build_dir/target-arm_cortex-a7_musl-1.1.16_eabi/libvorbis-1.3.5/vq/Makefile.am
+<lnxbuild:/local/mnt/workspace/ashok_build/qsdk> $

@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+  <remote
+      fetch="git://git-android.quicinc.com/"
+      name="qca"
+      review="review-android.quicinc.com" />
+  <remote
+      fetch="https://github.qualcomm.com/"
+      name="qgithub" />
+  <default
+      remote="qca"
+      revision="NHSS.QSDK.0.4" />
+  <project
+      name="oss/system/openwrt"
+      path="qsdk"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/system/feeds/luci"
+      path="qsdk/qca/feeds/luci"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/system/feeds/packages"
+      path="qsdk/qca/feeds/packages"
+      revision="refs/heads/win-non-wifitest.lnx.11.0"
+      dest-branch="refs/heads/win-non-wifitest.lnx.11.0"
+      upstream="refs/heads/win-non-wifitest.lnx.11.0"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/system/feeds/routing"
+      path="qsdk/qca/feeds/routing"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/kernel/linux-msm"
+      path="qsdk/qca/src/linux-4.4"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/system/feeds/platform/bootloader"
+      path="qsdk/qca/feeds/bootloader"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/system/feeds/platform/utils"
+      path="qsdk/qca/feeds/platform_utils"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/releases/configs/qsdk"
+      path="qsdk/qca/configs/qsdk"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/releases/configs/qca955x"
+      path="qsdk/qca/configs/qca955x.ln"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/qca/src/btconfig"
+      path="qsdk/qca/src/btconfig"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="system/openwrt/feeds/wlan-internal"
+      path="qsdk/qca/feeds/qcom-utils-internal"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="none" />
+  <project
+      name="releases/scripts/qsdk"
+      path="scripts"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="none" />
+  <project
+      name="tests/openwrt"
+      path="tests/openwrt"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="none" />
+  <project
+      name="system/openwrt/qcom-proprietary/release"
+      path="qsdk/qca/release"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="none" />
+  <project
+      name="oss/tools/meta"
+      path="meta-scripts"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="system/tools/meta"
+      path="meta-tools"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+ <project
+      name="system/openwrt/feeds/qca-cp"
+      path="qsdk/qca/feeds/qca-cp"
+      x-ship="none"
+      x-quic-dist="qsdk"
+      revision=""
+	  x-grease-customer="none" />
+  <project
+      name="platform/vendor/qcom-proprietary/qsdk/jtag-scripts"
+      path="jtag-scripts"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="platform/vendor/qcom-proprietary/qsdk/ship/platform-utils"
+      path="qsdk/qca/src/qca-platform-utils"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="oss/tools/skales"
+      path="skales"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="wlan/qcmbr"
+      path="qsdk/qca/src/qcmbr-10.4"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="wlan/btdiag"
+      path="qsdk/qca/src/btdiag"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="system/openwrt/feeds/art2"
+      path="qsdk/qca/feeds/art2"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="platform/vendor/qcom-proprietary/qsdk/diag"
+      path="qsdk/qca/src/qca-diag"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="platform/vendor/qcom-proprietary/qsdk/qmi-framework"
+      path="qsdk/qca/src/qca-qmi-framework"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="platform/vendor/qcom-proprietary/qsdk/time-services"
+      path="qsdk/qca/src/qca-time-services"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="platform/vendor/qcom-proprietary/ss-restart"
+      path="qsdk/qca/src/qca-ss-restart"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="none" />
+  <project
+      name="platform/vendor/qcom-proprietary/ship/wlan/cnss-daemon"
+      path="qsdk/qca/src/qca-cnss-daemon"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="system/openwrt/feeds/wigig-fw"
+      path="qsdk/qca/feeds/wigig-firmware"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="system/openwrt/feeds/wigig-utils"
+      path="qsdk/qca/feeds/wigig-utils"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="wigig/wigig-utils"
+      path="qsdk/qca/src/wigig-utils"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="wigig/wigig-utils-noship"
+      path="qsdk/qca/src/wigig-utils-noship"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="oss/wigig-utils"
+      path="qsdk/qca/src/wigig-utils-oss"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="system/openwrt/feeds/athdiag-10.4"
+      path="qsdk/qca/feeds/athdiag"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="oss/system/feeds/nss-host"
+      path="qsdk/qca/feeds/nss-host"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="system/openwrt/feeds/nss"
+      path="qsdk/qca/feeds/nss"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="nss/profilerd"
+      path="qsdk/qca/feeds/nss/profilerd"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="none" />
+  <project
+      name="lklm/nss-userspace"
+      path="qsdk/qca/feeds/nss-userspace"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="lklm/nss-userspace-src"
+      path="qsdk/qca/src/nss-userspace"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="oss/lklm/nss-drv"
+      path="qsdk/qca/src/qca-nss-drv"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/lklm/nss-clients"
+      path="qsdk/qca/src/qca-nss-clients"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/lklm/nss-gmac"
+      path="qsdk/qca/src/qca-nss-gmac"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/lklm/nss-dp"
+      path="qsdk/qca/src/qca-nss-dp"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/lklm/nss-crypto"
+      path="qsdk/qca/src/qca-nss-crypto"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/lklm/nss-cfi"
+      path="qsdk/qca/src/qca-nss-cfi"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="system/openwrt/feeds/nss-cust"
+      path="qsdk/qca/feeds/nss_cust"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="oss/boot/u-boot-2016"
+      path="qsdk/qca/src/u-boot-2016"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/boot/u-boot"
+      path="qsdk/qca/src/u-boot"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/boot/uboot-1.0"
+      path="qsdk/qca/src/uboot-1.0"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/boot/u-boot-1.1.4"
+      path="qsdk/qca/src/qca-legacy-uboot"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/boot/lk-af"
+      path="qsdk/qca/src/lk-af"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/lklm/nss-macsec"
+      path="qsdk/qca/src/qca-nss-macsec"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/lklm/qca-nss-ecm"
+      path="qsdk/qca/src/qca-nss-ecm"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="qsdk/qca/feeds/wlan-open-dev"
+      path="qsdk/qca/feeds/wlan-open"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="none" />
+  <project
+      name="oss/lklm/gobinet"
+      path="qsdk/qca/src/gobinet"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="system/openwrt/feeds/lte-cm"
+      path="qsdk/qca/feeds/lte-cm"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="firmware/ath10k-firmware"
+      path="qsdk/qca/src/ath10k-firmware"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="oss/system/openwrt/feeds/qca-wifi"
+      path="qsdk/qca/feeds/wlan"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="none" />
+  <project
+      name="power/qca-thermald"
+      path="qsdk/qca/src/qca-thermald-10.4"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="system/openwrt/feeds/qca"
+      path="qsdk/qca/feeds/qca"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="system/openwrt/feeds/qca-hk"
+      path="qsdk/qca/feeds/qca_hk"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="system/openwrt/feeds/qca-np"
+      path="qsdk/qca/feeds/qca_np"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="none" />
+  <project
+      name="wifi/qca-wifi"
+      path="qsdk/qca/src/qca-wifi"
+      revision="refs/heads/win-wifitest.lnx.11.0"
+      dest-branch="refs/heads/win-wifitest.lnx.11.0"
+      upstream="refs/heads/win-wifitest.lnx.11.0"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="wifi/athdiag-10.4"
+      path="qsdk/qca/src/athdiag"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="wifi/qca-hostap"
+      path="qsdk/qca/src/qca-hostap"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="wifi/qca-acfg"
+      path="qsdk/qca/src/qca-acfg"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="wifi/qca-spectral"
+      path="qsdk/qca/src/qca-spectral"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="wifi/qca-wpc"
+      path="qsdk/qca/src/qca-wpc"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="wifi/qca-lowi"
+      path="qsdk/qca/src/qca-lowi"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="oss/lklm/qca-ssdk"
+      path="qsdk/qca/src/qca-ssdk"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/lklm/qca-psdk"
+      path="qsdk/qca/src/qca-psdk"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="wifi/qca-wrapd"
+      path="qsdk/qca/src/qca-wrapd"
+      revision=""
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="qsdk/qca/src/crashkernel"
+      path="qsdk/qca/src/crashkernel"
+      revision="6d4bb1f839c93a29e83342766d07eb75241222d7"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="none" />
+  <project
+      name="system/openwrt/feeds/sigma-dut"
+      path="qsdk/qca/feeds/sigma-dut"
+      revision="2b9d55ece7271cf60d3ec8c47df4d324b2efcfb1"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="wifi/qca-wapid"
+      path="qsdk/qca/src/qca-wapid"
+      revision="226778536db4547f86791c76f9bf803497d0f6c2"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="system/openwrt/feeds/wapid"
+      path="qsdk/qca/feeds/wapid"
+      revision="de515b1b4bf26bb1a99994e6d4447113db072110"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="system/openwrt/feeds/wapi"
+      path="qsdk/qca/feeds/qca-wapi"
+      revision="90c942415a202a4083563973dd4de805b5cb121a"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="none" />
+  <project
+      name="wifi/qca-wapi-supplicant"
+      path="qsdk/qca/src/qca-wapi-supplicant"
+      revision="8999e112db7d4041809991720ed3d5eacb168e39"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="none" />
+  <project
+      name="wifi/qca-wapid-cfg80211"
+      path="qsdk/qca/src/qca-wapid-cfg80211"
+      revision="1a3bc1ea5191f5225c707185b0b326e52fe181cf"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="none" />
+  <project
+      name="oss/ssdk-shell"
+      path="qsdk/qca/src/qca-ssdk-shell"
+      revision="20406486fbae23a04fbb7ae264ef012844eb05a9"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="hyfi/libhyficommon"
+      path="qsdk/qca/src/libhyficommon"
+      revision="9a4e23fd2e212de17ce547658ec4bad8c9a1e97a"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="system/openwrt/feeds/ieee1905-security"
+      path="qsdk/qca/feeds/ieee1905-security"
+      revision="984c1d88e38b42c24d6305812b1cee26b7989a97"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="oss/hyfi/qca-hyfi-bridge"
+      path="qsdk/qca/src/qca-hyfi-bridge"
+      revision="ba9879b70f5a4ed3062f3a74489cf6f412e5be91"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/hyfi/qca-hyfi-qdisc"
+      path="qsdk/qca/src/qca-hyfi-qdisc"
+      revision="846e528e85b46da233a03fc025a24783e2c5a18b"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="whc/qca-whc-lbd"
+      path="qsdk/qca/src/qca-whc-lbd"
+      revision="f506d9c14536b30b9e24d05e63ce1d56e72dbd65"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="qsdk/qca/src/qca-whc-repacd"
+      path="qsdk/qca/src/qca-whc-repacd"
+      revision="b4d155714b76a294c09b64e632cb49191b9e1ef3"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="whc/qca-whc"
+      path="qsdk/qca/feeds/whc"
+      revision="220c6f2ca4c1289d9c32fb25f1ba9acf49f38e52"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="qsdk/qca/src/whcdiag"
+      path="qsdk/qca/src/whcdiag"
+      revision="c90734e11e7aa2e8a2ac22f1a03d50fed98f60e2"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="qsdk/qca/src/whcmvc"
+      path="qsdk/qca/src/whcmvc"
+      revision="9b482454859fd59bfd511b4cd93857fb29d6f4d1"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="qsdk/qca/src/whcwx"
+      path="qsdk/qca/src/whcwx"
+      revision="9081d04e3df38d9e112d8a3366b8a9dcf012e798"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="qsdk/qca/src/whcviz"
+      path="qsdk/qca/src/whcviz"
+      revision="f614412e09202adfe0cd9cc031833419f7c1dd1e"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="whc/whcautomation"
+      path="qsdk/qca/src/whcautomation"
+      revision="f506d9c14536b30b9e24d05e63ce1d56e72dbd65"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="none" />
+  <project
+      name="system/openwrt/feeds/athtestcmd"
+      path="qsdk/qca/feeds/athtestcmd"
+      revision="ff4facbee617ee348bfaecc8e868276a9e761768"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="wlan/athtestcmd"
+      path="qsdk/qca/src/athtestcmd"
+      revision="8945f75dc15fdc16a1f592876edcd991f1ec0bea"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="system/openwrt/feeds/plc"
+      path="qsdk/qca/feeds/qca-plc"
+      revision="196d49aa7097769a7442d2035c250674125d8d72"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="none" />
+  <project
+      name="oss/qca-ieee19051-dissector"
+      path="qsdk/qca/src/qca-ieee19051-dissector"
+      revision="6428d26c9ff683456e8f717166fe327672898dd2"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="hyfi/qca-hyd"
+      path="qsdk/qca/src/qca-hyd"
+      revision="9eb62c6abbcae2812d8e4a717e31a8f7e31ad5d8"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="hyfi/libwifisoncfg"
+      path="qsdk/qca/src/libwifisoncfg"
+      revision="908c6dcf4f4eea96c1507a078f37534e472985cf"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="hyfi/qca-vhyfid"
+      path="qsdk/qca/src/qca-vhyfid"
+      revision="9b756b9a49f26b98ccb7df91a4871681170fe9bd"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="hyfi/qca-hyctl"
+      path="qsdk/qca/src/qca-hyctl"
+      revision="02621534ddd2c913e266ea967d9ca6a2006cd867"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="hyfi/qca-hyfi-iptv-helper"
+      path="qsdk/qca/src/qca-hyfi-iptv-helper"
+      revision="98e294d56cc7d92495ae3712253cd94379180429"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="hyfi/qca-libhyfi-bridge"
+      path="qsdk/qca/src/qca-libhyfi-bridge"
+      revision="951ca46d6c4f7b56e2e34746cbe1e23cc14d909e"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="hyfi/libieee1905"
+      path="qsdk/qca/src/libieee1905"
+      revision="1c8336f4ccd41f3dc15abe72b14b72c5240ec222"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="hyfi/qca-ieee1905-gn"
+      path="qsdk/qca/src/qca-ieee1905-gn"
+      revision="c3d53328758cd105be3de880ad797a9166948274"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="none" />
+  <project
+      name="hyfi/libstorage"
+      path="qsdk/qca/src/libstorage"
+      revision="074c8f8b71ace7424d145ca3336e1eae009cab23"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="hyfi/qca-wsplcd"
+      path="qsdk/qca/src/qca-wsplcd"
+      revision="565fb35359ec53242b1cf732bc0cf5bcfb0bab28"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="hyfi/libwpa2"
+      path="qsdk/qca/src/libwpa2"
+      revision="ec92c9d504f89eeeda5cecf772b75eef01513350"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="plc/qca-plc-serv"
+      path="qsdk/qca/src/qca-plc-serv"
+      revision="30710fb0fbc46130aa8b4a00ef1f3fd8ccf098a1"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="none" />
+  <project
+      name="system/openwrt/feeds/qca-lib"
+      path="qsdk/qca/feeds/qca-lib"
+      revision="02d638a5da96a6297e418cefab267cef67bb3498"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="oss/lklm/qca-mcs"
+      path="qsdk/qca/src/qca-mcs"
+      revision="f1273f5f468bcdae2c67d93d1fd6f0c028378d3e"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="mcs/qca-mcs-apps"
+      path="qsdk/qca/src/qca-mcs-apps"
+      revision="9b847b24f20586ab55ca3a692730ac53d57ccc22"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="system/openwrt/feeds/mcs"
+      path="qsdk/qca/feeds/qca-mcs"
+      revision="75ffeaa2ef596c9b8101042e0ac8d59907c2104e"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="oss/system/feeds/networking"
+      path="qsdk/qca/feeds/networking"
+      revision="9e00bf620f5c1aa9bf7fefff99f54f0f83cc19c9"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="system/openwrt/feeds/apple-homekit"
+      path="qsdk/qca/feeds/apple-homekit"
+      revision="971b532c1d92e27c006b5c9299f8a11a9813041b"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="none" />
+  <project
+      name="oss/system/feeds/weave"
+      path="qsdk/qca/feeds/weave"
+      revision="9ee78cf3d57273036c545c44b6de821167a4f35f"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/boot/bootdrv"
+      path="qsdk/qca/src/qca-romboot"
+      revision="d4657811a97c9ba89254c40c2f7676ff8023f29c"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="system/openwrt/feeds/bluetopia"
+      path="qsdk/qca/feeds/bluetopia"
+      revision="3227a047e6518b8abdfae60e1a219565aea74a1f"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="oss/lklm/qca-rfs"
+      path="qsdk/qca/src/qca-rfs"
+      revision="709b93474e60aaf4d884d3d16c1435d8b5f0f90b"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/system/feeds/ssdk"
+      path="qsdk/qca/feeds/ssdk"
+      revision="7d35567ea74616b71120a256e68a8695dde1d537"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/system/feeds/shortcut-fe"
+      path="qsdk/qca/feeds/shortcut-fe"
+      revision="c2b72fc8391ebd0d671d2b91ab92e8196d3b1460"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/lklm/shortcut-fe"
+      path="qsdk/qca/src/shortcut-fe"
+      revision="1b4a9a684a5c40774423012331b46301d945656e"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="system/openwrt/feeds/qca-lit"
+      path="qsdk/qca/feeds/qca-lit"
+      revision="9efde16a03d20bf711cf489382b0761e48e924a1"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="none" />
+  <project
+      name="wifi/qvit-lithium"
+      path="qsdk/qca/src/qvit-lithium"
+      revision="6b7abf93335d9b5f8b6cd01097db53983619a945"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="none" />
+  <project
+      name="wifi/qca-wifi-oss"
+      path="qsdk/qca/src/qca-wifi/component_dev"
+      revision="24f8433fb2cb64eb3095cf78ef1d49ce74a8f709"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="platform/vendor/qcom-opensource/wlan/qca-wifi-host-cmn"
+      path="qsdk/qca/src/qca-wifi/cmn_dev"
+      revision="94e1f2308fb6b9ad909be9f80930a54a4f8f10ee"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="platform/vendor/qcom-opensource/wlan/fw-api"
+      path="qsdk/qca/src/qca-wifi/cmn_dev/fw_hdr"
+      revision="b1a22f272db275b58dc01b9fa6458c77980fd51e"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/qca-lacpd"
+      path="qsdk/qca/src/qca-lacpd"
+      revision="7fb2fec51234147e88c9717a6fd2d5e0f9f9b7fa"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="qsdk/qca/src/luci-app-atf"
+      path="qsdk/qca/src/luci-app-atf"
+      revision="ab5607c4bed22ae0d0a29e182dfc57c49f040d69"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="qsdk/qca/src/luci-app-lte"
+      path="qsdk/qca/src/luci-app-lte"
+      revision="d9ad90208a708d97e92e0835b09cce30e19b79c3"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="system/openwrt/feeds/luci-app-atf"
+      path="qsdk/qca/feeds/luci-qca"
+      revision="17a4dec879791abe5483b35fba981005769c60e5"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="wifi/qca-iface-mgr-10.4"
+      path="qsdk/qca/src/qca-iface-mgr-10.4"
+      revision="28789885dbd98253eae84f2f9f2639772e491d3e"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="platform/vendor/qcom-proprietary/ship/wlan/common-tools"
+      path="qsdk/qca/src/common-tools/"
+      revision="99f07f46a627d903634701296fc7dde7991d25f2"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="system/openwrt/feeds/csrmesh"
+      path="qsdk/qca/feeds/csrmesh"
+      revision="265f8b608797c2043535c8f5d3a042b94f038419"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="none" />
+  <project
+      name="system/openwrt/feeds/zigbee"
+      path="qsdk/qca/feeds/zigbee_efr32"
+      revision="ffa85925e93600b2d2bc2f2d47e095546d0cb462"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="none" />
+  <project
+      name="system/feeds/opewnrt/ath10k-fw-package"
+      path="qsdk/qca/feeds/ath10k-firmware"
+      revision="7d6f4e81f45a890874c024037386666771ff5fde"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="oss/lklm/qca-edma"
+      path="qsdk/qca/src/qca-edma"
+      revision="e0efb01b44d45a6dff5f944238f6de3255afcc1b"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="hyfi/qca-wifison-ext-lib"
+      path="qsdk/qca/src/qca-wifison-ext-lib"
+      revision="d9e8d123b5922cde7cb0bb83cd8451811ea2a50d"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="RSRC-Hyfi" />
+  <project
+      name="system/openwrt/feeds/hyfi"
+      path="qsdk/qca/feeds/hyfi"
+      revision="db0bda93c142ebbb1e4f4a874e37db6be5d33dcf"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="qsdk/qca/src/rdk-v-wifi-ath10k"
+      path="qsdk/qca/src/rdk-v-wifi-ath10k"
+      revision="14aa92023f176630cadca0994d921916641ad572"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="system/feeds/qca-platform-proprietary"
+      path="qsdk/qca/feeds/qca-platform-utils"
+      revision="f0bf6772b51bdc2c6646d0bc2c542d2d4b0ffe2b"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="platform/vendor/qcom-proprietary/ship/ftm"
+      path="qsdk/qca/src/common-tools/ftm"
+      revision="6ef9dbf7f396a50d293e1630bed976bca230d8c6"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="platform/vendor/qcom-proprietary/ship/wlan/ath6kl-utils"
+      path="qsdk/qca/src/common-tools/ath6kl-utils"
+      revision="77df97c028233589d74b8de15d1918f396cb9115"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="hy11" />
+  <project
+      name="platform/vendor/qcom-proprietary/ship/data"
+      path="qsdk/qca/src/data"
+      revision="97c980b4273a571e94dde3d6ef02f3bd37ca3c75"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="none" />
+  <project
+      name="platform/vendor/qcom-proprietary/ship/qmi"
+      path="qsdk/qca/src/qmi"
+      revision="06d71bd49e10392e26a0ec1f392809c0954e432f"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="none" />
+  <project
+      name="platform/vendor/qcom-opensource/dataservices"
+      path="qsdk/qca/src/data-oss"
+      revision="52c37a1b7de4c4aa70d74d6f2f4bb03c7e0894f3"
+	  x-grease-customer="none"
+      x-quic-dist="la"
+      x-ship="oss" />
+  <project
+      name="oss/system/feeds/data-oss"
+      path="qsdk/qca/feeds/lte-data-oss"
+      revision="1593b7f242864d8265e5c93ab61681aed6897a33"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="system/feeds/data-prop"
+      path="qsdk/qca/feeds/lte-data-prop"
+      revision="5cdedc8795128bff9bf19c3d98cb4a6da07d68d1"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="hy11" />
+  <project
+      name="oss/wireshark"
+      path="qsdk/wireshark-2.4.2-11ax-patches"
+      revision="cdf5c0caa4761e96b0fdb0dfaf5aadaf0755a88e"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="oss/wireshark-github"
+      path="qsdk/wireshark-github"
+      revision="75f437707b30a83e298745571d9efbfce882808a"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="system/openwrt/feeds/thread"
+      path="qsdk/qca/feeds/thread"
+      revision="e91afe39d73aa291300253c9808ff562fea588b1"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="none" />
+  <project
+      name="oss/nss/ubi32-nssmconf"
+      path="tools/ubi32-nssmconf"
+      revision="5a28ca33da22d184c2cdcb7121908713fb66fb6d"
+	  x-grease-customer="none"
+      x-quic-dist="qsdk"
+      x-ship="oss" />
+  <project
+      name="system/openwrt/feeds/qca-IOT"
+      path="qsdk/qca/feeds/qca-IOT"
+      revision="2b388ec157fdd8edda98145068e0cfc479473e9b"
+	  x-grease-customer="none"
+      x-quic-dist="none"
+      x-ship="none" />
+</manifest>
